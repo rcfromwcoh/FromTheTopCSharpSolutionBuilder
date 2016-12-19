@@ -3,10 +3,14 @@
 //For now, this will be a console application in a tutorial form of C#. 
 
 //A namespace is a collection of classes and other programming items. 
+//Namespaces allow for classes, delegates, interfaces, struts, enums and other namespaces. 
+//Those other items, the 'static' and 'void' will be discussed later.
 
 //The 'using' allows for use of the 'System' namespace classes.
 
-//Namespaces allow for classes, delegates, other namespaces
+//Please Note: C# is Case Sensitive. 
+
+
 using System;
 
 
@@ -31,7 +35,7 @@ namespace FromTheTopCSharpSolutionBuilder
             //other program elements. 
 
             Console.WriteLine("Welcome to C# Training!");
-            Console.ReadKey();
+            //Console.ReadKey();
 
             //You can add and call other methods in the 'Main'. Here is an example 
             //of using a method call to print a new line. 
@@ -41,7 +45,30 @@ namespace FromTheTopCSharpSolutionBuilder
 
         static void SecondLine()
         {
-            Console.WriteLine("This is the second line of the program!");
+            //Here is the code used to build the SecondLine class.
+
+            //Here we talk a little about how to read and write from the console. 
+            //You can do it with concatenation, as well as place holder syntax. 
+
+            Console.WriteLine("What is your name? Please enter your First name:");
+
+            //To read something from the console, use the ReadLine method.
+
+            //string UserName = Console.ReadLine();
+            string FirstName = Console.ReadLine();
+
+            Console.WriteLine("Please enter your Last Name:");
+            string LastName = Console.ReadLine();
+
+            //This is a way to concatenate a string
+            //Console.WriteLine("Hello " + UserName);
+
+            //Or you can use placeholder syntax to show your string.
+            //Put your placeholders in bracketed numbers starting with {0} and then 
+            //add items after the end of the placeheld string.
+
+            Console.WriteLine("Hello {0} {1}", FirstName, LastName);
+
             Console.ReadKey();
 
         }
