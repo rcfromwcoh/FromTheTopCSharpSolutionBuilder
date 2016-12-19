@@ -1,0 +1,6 @@
+\\bds01\users\rhorrocks\visual studio 2015\Projects\FromTheTopCSharpSolutionBuilder\FromTheTopCSharpSolutionBuilder\bin\Debug\FromTheTopCSharpSolutionBuilder.exe.config
+\\bds01\users\rhorrocks\visual studio 2015\Projects\FromTheTopCSharpSolutionBuilder\FromTheTopCSharpSolutionBuilder\bin\Debug\FromTheTopCSharpSolutionBuilder.exe
+\\bds01\users\rhorrocks\visual studio 2015\Projects\FromTheTopCSharpSolutionBuilder\FromTheTopCSharpSolutionBuilder\bin\Debug\FromTheTopCSharpSolutionBuilder.pdb
+\\bds01\users\rhorrocks\visual studio 2015\Projects\FromTheTopCSharpSolutionBuilder\FromTheTopCSharpSolutionBuilder\obj\Debug\FromTheTopCSharpSolutionBuilder.csprojResolveAssemblyReference.cache
+\\bds01\users\rhorrocks\visual studio 2015\Projects\FromTheTopCSharpSolutionBuilder\FromTheTopCSharpSolutionBuilder\obj\Debug\FromTheTopCSharpSolutionBuilder.exe
+\\bds01\users\rhorrocks\visual studio 2015\Projects\FromTheTopCSharpSolutionBuilder\FromTheTopCSharpSolutionBuilder\obj\Debug\FromTheTopCSharpSolutionBuilder.pdb
