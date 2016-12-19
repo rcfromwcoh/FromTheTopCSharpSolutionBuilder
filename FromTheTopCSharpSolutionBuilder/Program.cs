@@ -141,6 +141,27 @@ namespace FromTheTopCSharpSolutionBuilder
             
         }
 
+        static void Assignments()
+        {
+            //Assignment Operator is the = sign
+            //Aritmetic Operators, like +,-,*,/,%
+            //% designates modulus, or the remainder 
+
+            //Comparison operators: 
+            //== (is equal to) 
+            //!= (is not equal to)
+            //> (greater than)
+            //>= (greater than or equal to)
+            //< (less than)
+            //<= (less than or equal to)
+
+            //Conditional Operators:
+            //&& (and)
+            //|| (or)
+
+
+        }
+
             
     }
 }
