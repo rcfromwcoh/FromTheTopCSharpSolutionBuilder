@@ -69,9 +69,10 @@ namespace FromTheTopCSharpSolutionBuilder
             //Put your placeholders in bracketed numbers starting with {0} and then 
             //add items after the end of the placeheld string.
 
-            Console.WriteLine("Hello {0} {1}", FirstName, LastName);
+            Console.WriteLine("Hello {0} {1}, please press any key to continue.", FirstName, LastName);
 
             Console.ReadKey();
+            Console.Clear();
 
         }
 
@@ -87,6 +88,8 @@ namespace FromTheTopCSharpSolutionBuilder
             Console.WriteLine("C# has a Boolean function, which allows users to set a {0} or {1} condition", 
                 firstBool, secondBool);
             Console.WriteLine("Please press any key to continue.");
+            Console.ReadKey();
+            Console.Clear();
 
             //Integral Data Types
             //Go to MSDN (Microsoft Developer Network) to get value ranges, 
@@ -111,6 +114,7 @@ namespace FromTheTopCSharpSolutionBuilder
             Console.WriteLine("The minimum and maximum ulong values are {0}, {1}", ulong.MinValue, ulong.MaxValue);
             Console.WriteLine("Please press any key to continue.");
             Console.ReadKey();
+            Console.Clear();
 
             //Float Data Types
             //float
@@ -123,23 +127,25 @@ namespace FromTheTopCSharpSolutionBuilder
             Console.WriteLine("The minimum and maximum decimal values are {0}, {1}", decimal.MinValue, decimal.MaxValue);
             Console.WriteLine("Please press any key to continue.");
             Console.ReadKey();
+            Console.Clear();
 
             //Strings and Escape Characters
             //Escape sequence/character is the \ backslash key
             //There are some non-printable characters
             //The entire list of escape sequences are available on MSDN at https://msdn.microsoft.com/en-us/library/h21280bw.aspx.
 
-            Console.WriteLine("There are a number of characters that must be read with an escape character.\nFor example, the double quotes\"\" must be escaped to be seen on a screen."); 
-            string word = "\"Word\"";
+            Console.WriteLine("There are a number of characters that must be read with an escape character.\nFor example, the double quotes\"\" must be escaped to be seen on a screen.");
+            string word = @"Word";
             Console.WriteLine(word);
 
             //C# also has a Verbatim Literal way to literally take items verbatim. 
             Console.WriteLine("You can also use the verbatim literal @ in a string to show the complete, as-typed string");
-            string verbatimLiteral = @"C:\Programs\VisualStudio";
+            string verbatimLiteral = @"@C:\Programs\VisualStudio";
             Console.WriteLine("For example: " + verbatimLiteral);
             Console.WriteLine("Please press any key to continue.");
             Console.ReadKey();
-            
+            Console.Clear();
+
         }
 
         static void Assignments()
@@ -166,7 +172,9 @@ namespace FromTheTopCSharpSolutionBuilder
 
             do
             {
-                Console.WriteLine("Please enter your first number:");
+                Console.Clear();
+                Console.WriteLine("Welcome to the C# Calculator!" +
+                    " Please enter your first number:");
                 firstNum = double.Parse(Console.ReadLine());
                 Console.WriteLine("Enter Operation:");
                 string operation = Console.ReadLine();
