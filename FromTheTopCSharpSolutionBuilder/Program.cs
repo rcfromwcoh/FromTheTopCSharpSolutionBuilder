@@ -1,4 +1,17 @@
 ﻿
+//From the Top C# Builder
+//Robert Horrocks
+//December, 2016
+
+//This is a build of methods to describe fundamentals of the C# programming language. 
+
+//While I try to represent the concepts correctly, if 
+//there are errors, please let me know via GitHub at rcfromwcoh. 
+
+//I would be happy to accept any feedback as well via Twitter @rhorro. Thanks in advance for your feedback.
+
+//C# Tutorial
+
 //First is the namespace declaration. The namespace is declared when naming the solution.
 //For now, this will be a console application in a tutorial form of C#. 
 
@@ -40,10 +53,11 @@ namespace FromTheTopCSharpSolutionBuilder
             //You can add and call other methods in the 'Main'. Here is an example 
             //of using a method call to print a new line. 
 
-            SecondLine();
-            ThirdClass();
-            Assignments();
-            MoreOnTypes();
+            //SecondLine();
+            //ThirdClass();
+            //Assignments();
+            //MoreOnTypes();
+            ImplicitAndExplicitCasting();
         }
 
         static void SecondLine()
@@ -273,13 +287,13 @@ namespace FromTheTopCSharpSolutionBuilder
 
             bool? DeclaredMajor = null;
 
-            string MajorYesOrNo = null;
+            string majorYesOrNo = null;
 
             //The ? allows the fields to be nullable, and are largely helpful for database field applications. 
 
             Console.WriteLine("Have you declared a major? Type YES or NO: ");
-            MajorYesOrNo = Console.ReadLine();
-            MajorYesOrNo = MajorYesOrNo.ToUpper();
+            majorYesOrNo = Console.ReadLine();
+            majorYesOrNo = majorYesOrNo.ToUpper();
 
             //if (MajorYesOrNo == "YES")
             //{
@@ -303,13 +317,13 @@ namespace FromTheTopCSharpSolutionBuilder
             //The code above was a little repetitious. It also did not allow for a user to leave the question blank,
             //or put in an answer other than yes or no.
 
-            if (MajorYesOrNo == "YES")
+            if (majorYesOrNo == "YES")
             {
                 DeclaredMajor = true;
                 Console.WriteLine("You have declared a major");
             }
 
-            else if(MajorYesOrNo == "NO")
+            else if(majorYesOrNo == "NO")
             {
                 DeclaredMajor = false;
                 Console.WriteLine("You have not declared a major");
@@ -324,7 +338,130 @@ namespace FromTheTopCSharpSolutionBuilder
 
             Console.WriteLine("Thanks for letting us know if you have declared a major!");
             Console.WriteLine("Press any key to continue...");
+
+            //Another theme in types are implicit and explicit casting. 
+            //You will generate an error if you try to assign the value of a nullable variable with
+            //an unnullable variable. 
+
+            //The way to avoid this error is to explicitly cast your nullable variable into a unnullable value.
+            //Also, You can use the .value property to match the types.
+
+            //int? CannedGoodsForSale = null;
+
+            int? availableCannedGoods = null;
+
+            Console.WriteLine("How many canned goods do you wish to sell? Please enter your value:");
+
+            string CustomerInput = Console.ReadLine();
+
+            try
+            {
+                availableCannedGoods = Convert.ToInt32(CustomerInput);
+                
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            catch(OverflowException f)
+            {
+                Console.WriteLine(f.Message);
+            }
+            finally
+            {
+                if (availableCannedGoods >= 0)
+                {
+
+
+                    if (availableCannedGoods < Int32.MaxValue)
+                    {
+                        Console.WriteLine("There are {0} canned goods available for sale.", availableCannedGoods);
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("The amount is outside the field parameters.");
+                    }
+                }
+
+                else if (availableCannedGoods < 0)
+                {
+                    Console.WriteLine("There cannot be less than 0 canned goods available for sale.");
+                }
+
+                else
+                {
+                    Console.WriteLine("We did not understand your input.");
+                }
+            }
+
+            
+            Console.WriteLine("Please press any key to continue...");
             Console.ReadKey();
         }
+        static void ImplicitAndExplicitCasting()
+        {
+
+            //Another theme in types are implicit and explicit casting. 
+            //Implicit casting can change a data type when there is 
+            //1. no loss of information if the conversion is done.
+            //2. no possibility of an exception being thrown. 
+
+            //this is converted by the compiler with no problem. 
+
+            int b = 27;
+            float c = b;
+
+            Console.WriteLine(c);
+
+            //If you need to smoosh information into a degraded data type, it needs to be explicitly cast. 
+            //Explicit casting is done by the ConvertTo method 
+            float f = 123.456f;
+            
+            //The simple way to convert is to explicitly cast in parentheses prior to the value
+            //int i = (int)f;
+            //A type cast runs the risk of an overflow
+
+            //Or use the Convert.To class
+
+            int i = Convert.ToInt32(f);
+
+
+
+            Console.WriteLine(i);
+
+            //What about user input? All user input must be converted from string format.
+
+            Console.WriteLine("What is your favorite number?");
+            string userNumber = Console.ReadLine();
+            int result = -1;
+            bool isConversionSuccessful = int.TryParse(userNumber, out result);
+
+            if (isConversionSuccessful)
+            {
+                Console.WriteLine("Your favorite number is {0}", result);
+            }
+            else
+            {
+                Console.WriteLine("We did not understand a valid number");
+            }
+            
+
+            //TryParse gives us an opportunity to have an "out" in case the user messes up on the input and
+            //would otherwise cause an exception. 
+
+            
+
+            Console.WriteLine("Please press any key to continue...");
+            Console.ReadKey();
+        }
+
+        static void ArrayDiscussion()
+        {
+
+
+        }
+
     }
 }
