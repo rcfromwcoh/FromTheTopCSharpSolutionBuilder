@@ -43,6 +43,7 @@ namespace FromTheTopCSharpSolutionBuilder
             SecondLine();
             ThirdClass();
             Assignments();
+            MoreOnTypes();
         }
 
         static void SecondLine()
@@ -79,6 +80,11 @@ namespace FromTheTopCSharpSolutionBuilder
         static void ThirdClass()
         {
             //C# has many different built-in types.
+
+            //Value types are held in stack memory. All numeric data types, bool, char, date, structures, enumerations.
+
+            //Reference types contains a pointer reference to a place on the heap. 
+            //Strings, arrays, class types (e.g., form), interface, delegates are reference type examples.
 
             //Boolean (true or false)
 
@@ -166,6 +172,9 @@ namespace FromTheTopCSharpSolutionBuilder
             //&& (and)
             //|| (or)
 
+           
+
+
             double firstNum = 1;
             double secondNum = 1;
             string yesOrNo = null;
@@ -227,8 +236,95 @@ namespace FromTheTopCSharpSolutionBuilder
 
             Console.WriteLine("GoodBye! Hit any Key to continue...");
             Console.ReadKey();
+            Console.Clear();
+
+            //Ternary operator ?: is if the first is correct, do what is called; otherwise, do what is called after
+
+            Console.WriteLine("A ternary operator is expressed with a ?: used in a pattern.");
+            Console.WriteLine("For example, if condition a is true, then the first; if not, then go to the second.");
+            Console.WriteLine("If int TernaryNumber = 12; and bool IsTernaryNumber = TernaryNumber == 12 ? true : false;");
+
+            int TernaryNumber = 12;
+
+            bool IsTernaryNumber = TernaryNumber == 12 ? true : false;
+
+            Console.WriteLine("TernaryNumber == 12 is {0}", IsTernaryNumber);
+            Console.WriteLine("Please press any key to continue...");
+            Console.ReadKey();
         }
 
-            
+            static void MoreOnTypes()
+        {
+            //As stated above, 
+            //Value types are held in stack memory. All numeric data types, bool, char, date, structures, enumerations.
+
+            //Reference types contains a pointer reference to a place on the heap. 
+            //Strings, arrays, class types (e.g., form), interface, delegates are reference type examples.
+
+            //Reference types are nullable
+
+            //Value types are by default non-nullable. But if you need to make it nullable, preceed with a "?"
+
+            //just using this int declaration as an example
+            int? UserAge = null;
+
+            //setting the DeclaredMajor to null as a default, assuming the user enters no answer
+            //to the question we will ask. 
+
+            bool? DeclaredMajor = null;
+
+            string MajorYesOrNo = null;
+
+            //The ? allows the fields to be nullable, and are largely helpful for database field applications. 
+
+            Console.WriteLine("Have you declared a major? Type YES or NO: ");
+            MajorYesOrNo = Console.ReadLine();
+            MajorYesOrNo = MajorYesOrNo.ToUpper();
+
+            //if (MajorYesOrNo == "YES")
+            //{
+            //    DeclaredMajor = true;
+            //}
+
+            //else
+            //{
+            //    DeclaredMajor = false;
+            //}
+
+            //if (DeclaredMajor == true)
+            //{
+            //    Console.WriteLine("You have declared a major");
+            //}
+            //else if (!DeclaredMajor.Value)
+            //{
+            //    Console.WriteLine("You have not declared a major");
+            //}
+
+            //The code above was a little repetitious. It also did not allow for a user to leave the question blank,
+            //or put in an answer other than yes or no.
+
+            if (MajorYesOrNo == "YES")
+            {
+                DeclaredMajor = true;
+                Console.WriteLine("You have declared a major");
+            }
+
+            else if(MajorYesOrNo == "NO")
+            {
+                DeclaredMajor = false;
+                Console.WriteLine("You have not declared a major");
+            }
+
+            else 
+            {
+                Console.WriteLine("We did not understand or get an answer to your question.");
+            }
+
+
+
+            Console.WriteLine("Thanks for letting us know if you have declared a major!");
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
     }
 }
